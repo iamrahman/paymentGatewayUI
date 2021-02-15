@@ -15,7 +15,7 @@ const Layout = ({ children, heading, backBtn }) => {
         <div className="flex h-40 w-2/3 p-6">
           <div className="flex flex-col">
             <h1 className="text-4xl">{heading}</h1>
-            <div className="flex flex-row">{children}</div>
+            {children}
           </div>
         </div>
       </div>

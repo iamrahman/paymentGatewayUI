@@ -5,13 +5,16 @@ import { paymentOption } from "../../Constants";
 const Dashboard = () => {
   return (
     <Layout heading={"Choose your Payment option"} backBtn={true}>
-      {paymentOption.map((key, index) => {
-        return (
-          <div key={index} className="flex flex-row">
-            <Option label={key.label} />
-          </div>
-        );
-      })}
+      <div className="flex flex-row w-full m-8">
+        <Option label={"Debit Card"} classOverride="w-1/3"/>
+        <Option label={"Debit Card"} classOverride="w-1/3"/>
+        <Option label={"Debit Card"} classOverride="w-1/3"/>
+      </div>
+      <div className="flex flex-row w-full m-8">
+        <Option label={"Debit Card"} classOverride="w-1/3"/>
+        <Option label={"Debit Card"} classOverride="w-1/3"/>
+        <Option label={"Debit Card"} classOverride="w-1/3"/>
+      </div>
     </Layout>
   );
 };
