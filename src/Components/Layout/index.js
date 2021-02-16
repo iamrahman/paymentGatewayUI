@@ -1,5 +1,6 @@
 import React from "react";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import Card from "../Card";
 
 const Layout = ({ children, heading, backBtn }) => {
   return (
@@ -11,6 +12,7 @@ const Layout = ({ children, heading, backBtn }) => {
               <ArrowBackIcon color="primary" /> Go back
             </div>
           )}
+          {false && <Card/>}
         </div>
         <div className="flex h-40 w-2/3 p-6">
           <div className="flex flex-col">

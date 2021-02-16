@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Option = ({ label, classOverride }) => {
+const Option = ({ label, icon, classOverride }) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <div
@@ -9,7 +9,7 @@ const Option = ({ label, classOverride }) => {
       }`}
       onClick={() => setIsActive(!isActive)}
     >
-      <h1 className="text-center">{label}</h1>
+      {icon}{label}
     </div>
   );
 };

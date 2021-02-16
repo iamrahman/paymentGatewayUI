@@ -7,6 +7,8 @@ module.exports = {
       'black': '#000000',
       'white': '#FFFFFF',
       'primary': '#75D1F7',
+      'secondry': '#3685cf',
+      'orangered': '#ff4500'
     },
     extend: {
       width: {
@@ -15,7 +17,7 @@ module.exports = {
         '2/3': '66.67%',
         '1/4': '25.00%',
         '3/4': '75.00%',
-        '70': '70rem'
+        '70': '65rem'
       },
       height: {
         '1/2': '50.00%',
@@ -23,7 +25,7 @@ module.exports = {
         '2/3': '66.67%',
         '1/4': '25.00%',
         '3/4': '75.00%',
-        '40': '40rem'
+        '40': '38rem'
       }
     },
   },
