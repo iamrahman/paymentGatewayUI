@@ -1,10 +1,10 @@
 import React from 'react';
-import Dashboard from '../Containers/Dashboard';
 import './index.css';
+import ReactRouter from './router';
 const App = () => {
     return(
         <div className="flex flex-col items-center justify-center bg-primary w-full h-screen">
-            <Dashboard/>
+           <ReactRouter/>
         </div>
     );
 }

@@ -9,7 +9,10 @@ const Option = ({ label, icon, classOverride }) => {
       }`}
       onClick={() => setIsActive(!isActive)}
     >
-      {icon}{label}
+      <div className="flex items-center justify-center">
+      {icon}
+      </div>
+      <p className="flex text-center">{label}</p>
     </div>
   );
 };
