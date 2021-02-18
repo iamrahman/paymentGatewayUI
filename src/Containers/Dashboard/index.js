@@ -7,7 +7,7 @@ import { paymentOption } from "../../Constants";
 import Routes from '../../Utils/routes'
 const Dashboard = () => {
   return (
-    <Layout heading={"Choose your Payment option"} backBtn={true}>
+    <Layout heading={"Choose your Payment option"} backBtn={false} nextBtn={true}>
       <div className="grid grid-flow-col grid-cols-3 grid-rows-3 gap-4 my-20">
         {paymentOption.map((key, index) => {
           return (
@@ -20,7 +20,7 @@ const Dashboard = () => {
           );
         })}
       </div>
-      <div className="flex flex-row-reverse p-6">
+      {/* <div className="flex flex-row-reverse p-6">
         <Button
           label="Next"
           rightIcon={<ChevronRightOutlinedIcon style={{ color: "white" }} />}
@@ -28,7 +28,7 @@ const Dashboard = () => {
           color="white"
           onClick={ () => Routes.go('/card-payment')}
         />
-      </div>
+      </div> */}
     </Layout>
   );
 };
