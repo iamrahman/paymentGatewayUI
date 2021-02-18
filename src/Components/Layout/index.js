@@ -5,7 +5,7 @@ import { Routes } from "../../Utils";
 import ChevronRightOutlinedIcon from "@material-ui/icons/ChevronRightOutlined";
 import { Button } from "../../Components";
 
-const Layout = ({ children, heading, backBtn, nextBtn}) => {
+const Layout = ({ children, heading, backBtn, nextBtn, subChild = null}) => {
   return (
     <div className="container shadow-xl">
       <div className="flex w-full bg-white">
@@ -18,7 +18,7 @@ const Layout = ({ children, heading, backBtn, nextBtn}) => {
               <ArrowBackIcon style={{ color: "white" }} /> Go back
             </div>
           )}
-          {true && <Card />}
+          {subChild ? subChild: null}
         </div>
         <div className="w-7/12 h-40">
           <div className=" py-6">
@@ -26,7 +26,7 @@ const Layout = ({ children, heading, backBtn, nextBtn}) => {
           </div>
           {children}
         </div>
-        {nextBtn && <div className="w-1/12 flex">
+        {nextBtn && false && <div className="w-1/12 flex">
           <Button
             label="Next"
             rightIcon={<ChevronRightOutlinedIcon style={{ color: "white" }} />}

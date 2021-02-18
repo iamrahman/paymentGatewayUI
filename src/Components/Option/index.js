@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
-const Option = ({ label, icon, classOverride }) => {
-  const [isActive, setIsActive] = useState(false);
+const Option = ({ label, icon, classOverride, onClick, isActive }) => {
   return (
     <div
-      className={`flex items-center justify-center ${classOverride} h-20 shadow-md ${
-        isActive ? "border-2 border-primary" : ""
+      className={`flex items-center justify-center cursor-pointer ${classOverride} h-20 shadow-md rounded ${
+        isActive ? "border-2 border-secondry" : ""
       }`}
-      onClick={() => setIsActive(!isActive)}
+      onClick={() => onClick()}
     >
       <div className="flex items-center justify-center">
       {icon}

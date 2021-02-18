@@ -26,8 +26,8 @@ const CardPayment = () => {
             <TextField
               required
               id="outlined-required"
-              label="Card Number"
-              defaultValue="8768-8768-6540-6542"
+              label="Card Holder Name"
+              defaultValue="Amit Kumar Sharma"
               variant="outlined"
               className="flex w-full"
             />
@@ -40,16 +40,16 @@ const CardPayment = () => {
             <TextField
               required
               id="outlined-required"
-              label="Card Number"
-              defaultValue="8768-8768-6540-6542"
+              label="Exp Date"
+              defaultValue="11/12"
               variant="outlined"
               className="flex w-full"
             />
             <TextField
               required
               id="outlined-required"
-              label="Card Number"
-              defaultValue="8768-8768-6540-6542"
+              label="CVV"
+              defaultValue="987"
               variant="outlined"
               className="flex w-full"
             />
