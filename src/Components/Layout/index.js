@@ -7,7 +7,7 @@ import { Button } from "../../Components";
 
 const Layout = ({ children, heading, backBtn, nextBtn, subChild = null}) => {
   return (
-    <div className="container shadow-xl">
+    <div className="container px-20">
       <div className="flex w-full bg-white">
         <div className="w-4/12 h-40 primary-linear p-6">
           {backBtn && (

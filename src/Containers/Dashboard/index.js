@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../../Components/Layout";
 import Option from "../../Components/Option";
 import { paymentOption } from "../../Constants";
+import { Routes } from "../../Utils";
 
 const Dashboard = () => {
   const [activeMode, setActiveMode] = useState("");
@@ -20,7 +21,10 @@ const Dashboard = () => {
                 label={key.label}
                 icon={key.icon}
                 isActive={activeMode === key.label}
-                onClick={() => setActiveMode(key.label)}
+                onClick={() => {
+                  setActiveMode(key.label);
+                  Routes.go('/card-payment');
+                }}
                 classOverride="flex px-4"
               />
             );

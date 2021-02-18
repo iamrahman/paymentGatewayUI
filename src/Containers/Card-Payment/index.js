@@ -1,11 +1,12 @@
 import React from "react";
 import Layout from "../../Components/Layout";
 import TextField from "@material-ui/core/TextField";
+import Card from "../../Components/Card";
 
 const CardPayment = () => {
   return (
-    <Layout heading="Card Details" backBtn={true} nextBtn={true}>
-      <div className="flex py-3">
+    <Layout heading="Card Details" backBtn={true} nextBtn={true} subChild={<Card/>}>
+      <div className="flex pt-20">
         <div className="flex w-3/12"></div>
         <div className="flex w-6/12">
             <TextField
@@ -20,7 +21,7 @@ const CardPayment = () => {
         <div className="flex w-3/12"></div>
       </div>
 
-      <div className="flex py-3">
+      <div className="flex py-6">
         <div className="flex w-3/12"></div>
         <div className="flex w-6/12">
             <TextField
