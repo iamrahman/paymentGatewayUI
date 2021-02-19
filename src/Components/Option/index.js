@@ -1,18 +1,20 @@
-import React, { useState } from "react";
+import { Button, Grid, Typography } from "@material-ui/core";
+import React from "react";
 
-const Option = ({ label, icon, classOverride, onClick, isActive }) => {
+const Option = ({ label, icon, isActive, onClick }) => {
   return (
-    <div
-      className={`flex items-center justify-center cursor-pointer ${classOverride} h-20 shadow-md rounded ${
-        isActive ? "border-2 border-secondry" : ""
-      }`}
+    <Grid
+      item
+      md={4}
       onClick={() => onClick()}
     >
-      <div className="flex items-center justify-center">
-      {icon}
-      </div>
-      <p className="flex text-center">{label}</p>
-    </div>
+      <Button variant={ isActive ? "contained" : "outlined"} color="primary" className="w-full">
+        <Grid container>
+          <Grid item md={12}>{icon}</Grid>
+          <Grid item md={12}>{label}</Grid>
+        </Grid>
+      </Button>
+    </Grid>
   );
 };
 

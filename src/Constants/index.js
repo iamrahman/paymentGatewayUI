@@ -22,7 +22,7 @@ export const paymentOption = [
         icon: <CreditCardOutlinedIcon/>
     },
     {
-        label: 'Internet Banking',
+        label: 'Banking',
         icon: <AccountBalanceOutlinedIcon/>
     },
     {

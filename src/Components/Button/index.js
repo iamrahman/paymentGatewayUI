@@ -1,11 +1,24 @@
+import { Grid } from "@material-ui/core";
 import React from "react";
 
-const Button = ({ classOverride, label, color, rightIcon, leftIcon, onClick }) => {
-  const textColor = `text-${color} cursor-pointer`;
+const Button = ({
+  classOverride,
+  label,
+  color,
+  rightIcon,
+  leftIcon,
+  onClick,
+}) => {
   return (
-    <div className={`flex items-center justify-center cursor-pointer ${classOverride}`} onClick={onClick}>
-      {leftIcon}<label className={textColor}>{label}</label>{rightIcon}
-    </div>
+    <Grid
+      item
+      className={`center cursor-pointer ${classOverride}`}
+      onClick={onClick}
+    >
+      {leftIcon}
+      <label className={`${color} cursor-pointer`}>{label}</label>
+      {rightIcon}
+    </Grid>
   );
 };
 

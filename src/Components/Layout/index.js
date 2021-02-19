@@ -1,42 +1,42 @@
 import React from "react";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import Card from "../Card";
 import { Routes } from "../../Utils";
-import ChevronRightOutlinedIcon from "@material-ui/icons/ChevronRightOutlined";
-import { Button } from "../../Components";
+import { Grid, Typography } from "@material-ui/core";
 
-const Layout = ({ children, heading, backBtn, nextBtn, subChild = null}) => {
+const Layout = ({ children, heading, backBtn, nextBtn, subChild = null }) => {
   return (
-    <div className="container px-20">
-      <div className="flex w-full bg-white">
-        <div className="w-4/12 h-40 primary-linear p-6">
-          {backBtn && (
-            <div
-              className="text-white cursor-pointer"
-              onClick={() => Routes.back()}
-            >
-              <ArrowBackIcon style={{ color: "white" }} /> Go back
-            </div>
-          )}
-          {subChild ? subChild: null}
-        </div>
-        <div className="w-7/12 h-40">
-          <div className=" py-6">
+    <Grid
+      container
+      spacing={4}
+      direction="row"
+      alignItems="center"
+      justifyContent="center"
+      className="h-container bg-secondry"
+    >
+      <Grid item md={1} lg={2} />
+      <Grid item sm={12} md={4} lg={4} className="primary-linear h-layout">
+        {backBtn && (
+          <Grid
+            container
+            className="white cursor-pointer"
+            onClick={() => Routes.back()}
+          >
+            <ArrowBackIcon style={{ color: "white" }} />
+            <Typography>Go back</Typography>
+          </Grid>
+        )}
+        {subChild}
+      </Grid>
+      <Grid item sm={12} md={6} lg={4} className="bg-white h-layout">
+        {heading &&
+          <Grid item>
             <h1 className="text-4xl text-center">{heading}</h1>
-          </div>
-          {children}
-        </div>
-        {nextBtn && false && <div className="w-1/12 flex">
-          <Button
-            label="Next"
-            rightIcon={<ChevronRightOutlinedIcon style={{ color: "white" }} />}
-            classOverride="mt-56 ml-16 w-20 h-20 bg-secondry rounded-full shadow-lg absolute"
-            color="white"
-            onClick={() => Routes.go("/card-payment")}
-          />
-        </div>}
-      </div>
-    </div>
+          </Grid>
+        }
+        {children}
+      </Grid>
+      <Grid item md={1} lg={2} />
+    </Grid>
   );
 };
 export default Layout;
