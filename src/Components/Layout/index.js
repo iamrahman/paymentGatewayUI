@@ -14,7 +14,7 @@ const Layout = ({ children, heading, backBtn, nextBtn, subChild = null }) => {
       className="h-container bg-secondry"
     >
       <Grid item md={1} lg={2} />
-      <Grid item sm={12} md={4} lg={4} className="primary-linear h-layout">
+      <Grid item sm={12} md={4} lg={3} className="primary-linear h-layout">
         {backBtn && (
           <Grid
             container
@@ -27,7 +27,7 @@ const Layout = ({ children, heading, backBtn, nextBtn, subChild = null }) => {
         )}
         {subChild}
       </Grid>
-      <Grid item sm={12} md={6} lg={4} className="bg-white h-layout">
+      <Grid item sm={12} md={6} lg={5} className="bg-white h-layout">
         {heading &&
           <Grid item>
             <h1 className="text-4xl text-center">{heading}</h1>

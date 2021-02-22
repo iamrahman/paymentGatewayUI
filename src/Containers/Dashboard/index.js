@@ -6,13 +6,17 @@ import { paymentOption } from "../../Constants";
 import Button from "../../Components/Button";
 import { Routes } from "../../Utils";
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import Animation2 from "../../Assets/animation2.gif";
+
 const Dashboard = () => {
   const [activeMode, setActiveMode] = useState("");
+  const Animation = <img src={Animation2} style={{width: '100%'}} />
   return (
     <Layout
       heading={"Choose your Payment option"}
       backBtn={true}
       nextBtn={true}
+      subChild={Animation}
     >
       <Grid
         container

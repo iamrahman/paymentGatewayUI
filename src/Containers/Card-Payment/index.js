@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../Components/Layout";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
@@ -6,12 +6,29 @@ import Card from "../../Components/Card";
 import { Button } from "@material-ui/core";
 
 const CardPayment = () => {
+
+  const [cardDetails, setCardDetails] = useState({
+    number: "",
+    name: '',
+    expDate: "",
+    cvv: ''
+  });
+
+  const updateCardDetails = (event) => {
+    event.persist();
+    setCardDetails({
+      number: event?.target?.name === 'number'? event?.target?.value : cardDetails?.number,
+      name: event?.target?.name === 'name'? event?.target?.value : cardDetails?.name,
+      expDate: event?.target?.name === 'expDate'? event?.target?.value : cardDetails?.expDate,
+      cvv: event?.target?.name === 'cvv'? event?.target?.value : cardDetails?.cvv,
+    });
+  }
   return (
     <Layout
       heading="Card Details"
       backBtn={true}
       nextBtn={true}
-      subChild={<Card />}
+      subChild={<Card cardDetails={cardDetails} />}
     >
       <Grid
         container
@@ -26,10 +43,12 @@ const CardPayment = () => {
           <TextField
             required
             id="outlined-required"
-            label="Card Number"
-            defaultValue="8768-8768-6540-6542"
+            label="Enter your Card Number"
+            name="number"
+            defaultValue={cardDetails?.number}
             variant="outlined"
             className="w-full"
+            onChange={updateCardDetails}
           />
         </Grid>
         <Grid item lg={2} md={2} />
@@ -40,9 +59,11 @@ const CardPayment = () => {
             required
             id="outlined-required"
             label="Card Holder Name"
-            defaultValue="Inamur Rahman"
+            name="name"
+            defaultValue={cardDetails?.name}
             variant="outlined"
             className="w-full"
+            onChange={updateCardDetails}
           />
         </Grid>
         <Grid item lg={2} md={2} />
@@ -53,9 +74,11 @@ const CardPayment = () => {
             required
             id="outlined-required"
             label="Exp Date"
-            defaultValue="11/24"
+            name="expDate"
+            defaultValue={cardDetails?.expDate}
             variant="outlined"
             className="w-full"
+            onChange={updateCardDetails}
           />
         </Grid>
         <Grid item lg={4} md={4}>
@@ -63,9 +86,11 @@ const CardPayment = () => {
             required
             id="outlined-required"
             label="CVV"
-            defaultValue="983"
+            defaultValue={cardDetails?.cvv}
+            name="cvv"
             variant="outlined"
             className="w-full"
+            onChange={updateCardDetails}
           />
         </Grid>
         <Grid item lg={2} md={2} />
