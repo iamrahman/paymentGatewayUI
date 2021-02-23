@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Card from "../../Components/Card";
 import { Button } from "@material-ui/core";
-
+import { useSpring, animated as target } from 'react-spring';
 const CardPayment = () => {
 
   const [cardDetails, setCardDetails] = useState({
@@ -13,6 +13,14 @@ const CardPayment = () => {
     expDate: "",
     cvv: ''
   });
+
+  const [flipCard, setFlipCard] = useState(false);
+
+  const { transform, opacity } = useSpring({
+    opacity: flipCard ? 1 : 0,
+    transform: `perspective(600px) rotateX(${flipCard ? 180 : 0}deg)`,
+    config: { mass: 5, tension: 500, friction: 80 }
+  })
 
   const updateCardDetails = (event) => {
     event.persist();
@@ -28,7 +36,7 @@ const CardPayment = () => {
       heading="Card Details"
       backBtn={true}
       nextBtn={true}
-      subChild={<Card cardDetails={cardDetails} flip={true} />}
+      subChild={<Card cardDetails={cardDetails} target={target} flipCard={flipCard} setFlipCard={setFlipCard} transform={transform} opacity={opacity} />}
     >
       <Grid
         container
