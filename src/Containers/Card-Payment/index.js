@@ -28,7 +28,7 @@ const CardPayment = () => {
       heading="Card Details"
       backBtn={true}
       nextBtn={true}
-      subChild={<Card cardDetails={cardDetails} />}
+      subChild={<Card cardDetails={cardDetails} flip={true} />}
     >
       <Grid
         container

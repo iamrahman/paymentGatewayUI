@@ -18,6 +18,21 @@
     #93291e,
     #ed213a
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 12rem;
+}
+.card-flip {
+  background: #706869; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffffff,
+    #830505
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c3afd,
+    #830505
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 12rem;
 }
 .center {
   display: flex;
@@ -37,6 +52,18 @@
 }
 .white {
   color: white;
+}
+.red {
+  color: red;
+}
+.bg-black {
+  background-color: black;
+}
+.bg-gray {
+  background-color: rgb(107, 107, 107);
+}
+.black {
+  color: black;
 }
 .bg-primary {
   background-color: rgb(54, 133, 207);
@@ -130,6 +157,10 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.px-0 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .py-1 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -153,6 +184,9 @@
 /* Margin */
 .m-2 {
   margin: 1rem !important;
+}
+.mt-2 {
+  margin-top: 2rem !important;
 }
 .mt-4 {
   margin-top: 4rem !important;
